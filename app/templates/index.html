@@ -1,0 +1,225 @@
+{% extends 'base.html' %}
+
+{%block title%} Home {%endblock%}
+
+{%block content%}
+
+<div class="container text-center mt-3">
+    <h1>{{user_data['name']}}</h1>
+    <p></p>
+    <figure class="text-center">
+        <blockquote class="blockquote">
+            <p>Telematics Engineer | Software Enginner</p>
+        </blockquote>
+        <figcaption class="blockquote-footer">
+            Welcome to my<cite title="Source Title"> personal website</cite>
+        </figcaption>
+    </figure>
+</div>
+<section id="About">
+<div class="container">
+    <h2>About me</h2>
+    <div class="card">
+        <div class="card-body">
+            I'm a Telematics Engineer with a strong passion for software development. I design, develop, and document software solutions using languages such as Python, Java, COBOL, and C/C++. I'm also experienced with modern frameworks like React and Angular.
+        </div>
+    </div>
+</div>
+</section>
+<br>
+<section id="Exper">
+<div class="container">
+    <h2>Experience</h2>
+    <div class="card border-info mb-3" style="max-width: 98rem;">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span>@Softtek</span>
+            <span>CDMX, México</span>
+            <span>Oct 2024 - Present</span>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Software Enginner</h5>
+            <p class="card-text">I participated in a banking sector project as a software engineer, addressing client requirements for the maintenance and development of core banking systems.</p>
+            <li>Designed, developed, tested, documented, and maintained banking software applications using COBOL and SQL.</li>
+            <li>Identify and fix errors in existing code while proposing improvements to optimize performance and efficiency.</li>
+            <li>Collaborated with other developers to design innovative and efficient software solutions, from implementation to maintenance.</li>
+            <br>
+            <p>
+                <span class="fw-bold">Technical Skills: </span>
+                <span class="fst-italic">COBOL, Git, Bitbucket, Scrum Methodology, and Data Structures.</span>
+                <br>
+                <span class="fw-bold">Soft Skills: </span>
+                <span class="fst-italic">Teamwork, Time Management, Communication, Expositionof projects with owners and Attention to detail.</span>
+            </p>
+        </div>
+    </div>
+</div>
+</section>
+<br>
+<section id="Educ">
+    <div class="container">
+        <h2>Education</h2>
+         {%for edu in user_data['Educ']%}
+         <br>
+        <div class="card" style="width: 79rem;">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span>{{edu['Carrer']}}</span>
+                <span>{{edu['Place']}}</span>
+                <span>{{edu['Data']}}</span>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{edu['Unitity']}} <br>
+                {{edu['School']}}
+                </li>
+                {%endfor%}
+            </ul>
+        </div>  
+    </div>
+    
+</section>
+<br>
+<section id="Skills">
+<div class="container">
+    <h2>Skills</h2>
+    <div class="row">
+         {%for edu in user_data['education']%}
+    <div class="col 4">
+        <div class="card mt-2">
+            <div class="card-header">
+                {{edu['Skill']}}
+            </div>
+        <div class="card-body">
+            <p class="card-text">{{edu['Description']}}</p>
+            <ul>
+                {%for skill in edu['Skill Detail']%}
+                <li>{{skill}}</li>
+                {%endfor%}
+            </ul>
+        </div>
+    </div>
+</div>
+{%endfor%}
+</div>
+</div>
+</section>
+<br>
+<section id="Projects">
+<div class="container">
+    <h2>Projects</h2>
+    {%for project in user_data['projects']%}
+    <div class="container">
+        <h5>Project title: {{project['Project']}}</h5>
+        <p>{{project['Description']}}</p>
+        <ul>
+                {%for skill in project['Skill Detail']%}
+                <li>{{skill}}</li>
+                {%endfor%}
+        </ul>
+        <p>
+                <span class="fw-bold">Technical Skills: </span>
+                <span class="fst-italic">{{project['Technical']}}</span>
+                <br>
+            </p>
+    </div>
+    {%endfor%}
+</div>
+</section>
+<br>
+<section id="Courses">
+<div class="container">
+    <h2>Courses</h2>
+    <div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        AWS
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <a href="https://www.credly.com/users/francisco-rodriguez-osorio"><strong>AWS Academy Introduction to Cloud Semester 1, AWS Educate Getting Started with Compute and others.</strong> </a>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Microsoft Azure
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <a href="https://learn.microsoft.com/en-us/users/franciscorodriguezosorio-5422/"><strong>Microsoft Azure Fundamentals: Describe cloud concepts and others</strong> </a>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+      Scrum
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <a href="https://www.scrumstudy.com/certification/verify?type=SFC&number=1058418"><strong>Scrum Fundamentals Certified (SFC™)</strong> </a>
+      </div>
+    </div>
+  </div>
+    <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+        Cisco Networking Academy
+      </button>
+    </h2>
+    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <a href="https://www.credly.com/badges/493d0042-2039-44b4-9859-1fbc42984d34/linked_in_profile"><strong>Networking Basics</strong></a>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo">
+        Udemy
+      </button>
+    </h2>
+    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+      <div class="accordion-body">
+        <strong>La Guía de Jenkins: ¡De Cero a Experto! | Mayo 2025</strong>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<br>
+<section id="Languages">
+<div class="container">
+    <div class="card" style="width: 18rem;">
+  <div class="card-header">
+<h2>Languages</h2>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Spanish (Native proficiency)</li>
+    <li class="list-group-item">English (B2)</li>
+  </ul>
+</div>
+    
+</div>
+</section>
+
+<br>
+<section id="Contact">
+<div class="container">
+    <h2>Contact</h2>
+    <div class="card border-info mb-3" style="max-width: 98rem;">
+        <div class="card-header d-flex justify-content-between align-items-center">
+            <span class="material-symbols-outlined">mail</span>
+            <span>frosorio00@gmail.com</span>
+            <span>(+52) 56 3102 6153</span>
+            <span href="https://www.linkedin.com/in/franciscorodrigueszosorio29/">franciscorodrigueszosorio29</span>
+            <span href="https://github.com/fro29">fro29</span>
+        </div>
+    </div>
+</div>
+</section>
+{%endblock%}
