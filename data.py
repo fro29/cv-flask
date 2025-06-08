@@ -1,4 +1,4 @@
-data = {
+Data = {
     'name': 'Francisco Rodríguez Osorio',
     'education': [
         {'Skill': 'Programming languages:',
