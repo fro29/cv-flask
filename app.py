@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('index.html', user_data = data)
+    return render_template('index.html', user_data = Data)
 
 @app.route('/cv/<name>')
 def cv(name):
